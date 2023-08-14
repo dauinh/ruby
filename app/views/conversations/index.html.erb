@@ -2,9 +2,7 @@
 <div>
   <ul>
     <% @conversations.each do |conversation| %>
-      <li>
-        <%= link_to conversation.id, conversation%>
-      </li>
+      <li><%= link_to conversation.id, conversation%></li>
     <% end %>
   </ul>
   <%= button_to "New conversation", { action: "create", controller: "conversations" } %>

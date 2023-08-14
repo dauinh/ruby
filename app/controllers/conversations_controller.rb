@@ -8,7 +8,7 @@ class ConversationsController < ApplicationController
     @messages = @conversation.messages
   end
 
-  def def new
+  def new
     @conversation = Conversation.new
   end
   
@@ -21,6 +21,19 @@ class ConversationsController < ApplicationController
       flash[:error] = "Something went wrong"
       render 'new', status: :unprocessable_entity
     end
+
+    def destroy
+      @conversation = Conversation.find(params[:id])
+      @conversation.destroy
+
+      redirect_to root_path, status: :see_other
+    end
+    
+
+    # private
+    #   def conversation_param
+    #     params.require(:conversation).permit(:messages)
+    #   end
   end
   
 end

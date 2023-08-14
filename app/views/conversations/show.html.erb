@@ -6,3 +6,5 @@
     </li>
   <% end %>
 </ul>
+<%= link_to "Delete conversation", conversation_path(@conversation), 
+    data: { confirm: 'Are you sure'}, method: :delete %>
