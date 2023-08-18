@@ -6,5 +6,6 @@
     </li>
   <% end %>
 </ul>
-<%= link_to "Delete conversation", conversation_path(@conversation), 
-    data: { confirm: 'Are you sure'}, method: :delete %>
+<p><%= conversation_path(@conversation) %></p>
+<%= button_to "Delete conversation", conversation_path(@conversation), 
+    data: { "turbo-confirm": 'Are you sure', "turbo-method": :delete }, method: :delete %>
